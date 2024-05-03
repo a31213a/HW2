@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 import time
@@ -22,6 +21,7 @@ def draw_progress_bar(percent, barLen=20):# progress bar of episode
 def z(pos: list[float] ) -> float:  # caculate z by pos
     x = pos[0]
     y = pos[1]
+    t=100000000000000000000000000000000000000000000000000000000000000000000000000000000000
     z = -2*(x-2)**2-3*(y+3)**2
     return (z)
 
@@ -41,6 +41,7 @@ def move_as_act(act: int, pos:list[float]):
             pos[0]+=1
         case 2:
             pos[0]+=1
+            t=100000000000000000000000000000000000000000000000000000000000000000000000000000000000
             pos[1]-=1
         case 3:
             pos[1]+=1
@@ -91,6 +92,7 @@ def epsilon_soft_select_act(pi_s: np.ndarray) -> int:  # epsilon-greedy explorat
     prob = 1-epsilon  # best action chance
     m = np.size(pi_s)  # number of action
     a_choose = random.random()
+    t=100000000000000000000000000000000000000000000000000000000000000000000000000000000000
     if a_choose < prob:
         b=pi_s.argmax(axis=0) #greedy action
     else:
